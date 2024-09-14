@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fusion Shake</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+ 
+</head>
+<body>
+  <!-- Hamburger Menu -->
+  <div class="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  
+  <!-- Vertical Navigation -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="./images/fs.png" alt="Logo">
+    </div>
+    
+    <ul class="nav-links">
+        <li><a href="#services"><i class="fas fa-concierge-bell"></i> Services</a></li>
+        <li><a href="#signature-cocktails"><i class="fas fa-utensils"></i> Menu</a></li>
+        <li><a href="#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Elevate Your Cocktail Experience</h1>
+      <p>Discover the finest crafted cocktails with our exclusive menu and event services.</p>
+      <a href="#order" class="btn">Order Now</a>
+    </div>
+  </header>
+
+  <!-- Services Section -->
+<!-- Services Section -->
+<section class="services" id="services">
+    <h2>Our Services</h2>
+    <div class="service-container">
+      <div class="service-card service-left">
+        <h3>Custom Cocktails</h3>
+        <p>Signature cocktails tailored to your taste for any occasion. We make sure every sip is unforgettable.</p>
+      </div>
+      <div class="service-card service-right">
+        <h3>Event Catering</h3>
+        <p>Exclusive cocktail catering that enhances the vibe of your special events. Elevate your experience with us.</p>
+      </div>
+      <div class="service-card service-left">
+        <h3>Home Delivery</h3>
+        <p>Hand-crafted cocktails delivered right to your doorstep. Enjoy premium cocktails from the comfort of home.</p>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Menu Section -->
+  <!-- Signature Cocktails Section -->
+<section class="signature-cocktails" id="signature-cocktails">
+    <div class="cocktail-content">
+      <div class="cocktail-image">
+        <img src="./images/131085.jpg" alt="Signature Cocktails">
+      </div>
+      <div class="cocktail-text">
+        <h2>Signature Cocktails</h2>
+        <p>Experience the art of cocktail craftsmanship. Our signature cocktails are designed to leave a lasting impression with every sip.</p>
+        <a href="#menu" class="btn">Explore Menu</a>
+      </div>
+    </div>
+  </section>
+  <section class="menu" id="menu">
+    <h2>Our Cocktail Menu</h2>
+  
+    <!-- Filter Options -->
+    <div class="cocktail-filter">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="classic">Classic</button>
+      <button class="filter-btn" data-filter="signature">Signature</button>
+      <button class="filter-btn" data-filter="non-alcoholic">Non-Alcoholic</button>
+    </div>
+  
+    <!-- Cocktail Items Grid -->
+    <div class="cocktail-grid">
+      <!-- Cocktail Item -->
+      <div class="cocktail-item classic">
+        <div class="cocktail-card">
+          <div class="cocktail-front">
+            <img src="./images/2148145407.jpg" alt="Classic Mojito">
+            <div class="cocktail-name">
+              <h3>Mojito</h3>
+              <p>25 GHS</p>
+            </div>
+          </div>
+          <div class="cocktail-back">
+            <h3>Mojito</h3>
+            <p class="details">Prep Time: 5 mins</p>
+            <p class="ingredients">Rum, Mint, Soda Water, Lime</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Another Cocktail Item -->
+      <div class="cocktail-item signature">
+        <div class="cocktail-card">
+          <div class="cocktail-front">
+            <img src="./images/2148145445.jpg" alt="Signature Berry Mix">
+            <div class="cocktail-name">
+              <h3>Signature Berry Mix</h3>
+              <p>25 GHS</p>
+            </div>
+          </div>
+          <div class="cocktail-back">
+            <h3>Signature Berry Mix</h3>
+            <p class="details">Prep Time: 7 mins</p>
+            <p class="ingredients">Gin, Mixed Berries, Lime</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Add more cocktail items here -->
+    </div>
+  </section>
+      
+  <section class="reservation" id="reservation">
+    <h2>Book a Private Event</h2>
+    <form class="reservation-form">
+      <input type="date" placeholder="Event Date" required>
+      <input type="number" placeholder="Number of Guests" required>
+      <textarea placeholder="Custom Requirements"></textarea>
+      <button type="submit" class="btn">Book Now</button>
+    </form>
+  </section>
+  
+  <section class="gallery" id="gallery">
+    <h2>Event Gallery & Tutorials</h2>
+    <div class="gallery-container">
+        <!-- Event Images -->
+        <div class="gallery-item">
+            <img src="./images/fs.png" alt="Event 1">
+        </div>
+        <div class="gallery-item">
+            <img src="./images/fusion.jpg" alt="Event 2">
+        </div>
+        
+        <!-- Video Section with Customized Controls -->
+        <div class="gallery-item video-container">
+            <video id="tutorial-video" controls>
+                <source src="tutorial.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-controls">
+                <button class="play-pause" id="playPauseBtn">Play</button>
+                <input type="range" id="progress-bar" value="0" max="100">
+                <span id="time-elapsed">0:00</span> / <span id="duration">0:00</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <!-- <div class="popup">
+    <h3>Limited-Time Offer: Buy 2 Get 1 Free on All Signature Cocktails!</h3>
+    <button class="close-popup">X</button>
+  </div> -->
+  
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Cocktail Business. All rights reserved.</p>
+  </footer>
+  <script>
+    const filterButtons = document.querySelectorAll('.filter-btn');
+const cocktailItems = document.querySelectorAll('.cocktail-item');
+
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const filter = button.getAttribute('data-filter');
+    cocktailItems.forEach(item => {
+      if (item.classList.contains(filter) || filter === 'all') {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+});
+// document.querySelector('.close-popup').addEventListener('click', function() {
+//   document.querySelector('.popup').style.display = 'none';
+// });
+const video = document.getElementById('tutorial-video');
+const playPauseBtn = document.getElementById('playPauseBtn');
+const progressBar = document.getElementById('progress-bar');
+const timeElapsed = document.getElementById('time-elapsed');
+const durationDisplay = document.getElementById('duration');
+
+video.addEventListener('loadedmetadata', () => {
+    durationDisplay.textContent = formatTime(video.duration);
+});
+
+video.addEventListener('timeupdate', () => {
+    progressBar.value = (video.currentTime / video.duration) * 100;
+    timeElapsed.textContent = formatTime(video.currentTime);
+});
+
+playPauseBtn.addEventListener('click', () => {
+    if (video.paused) {
+        video.play();
+        playPauseBtn.textContent = 'Pause';
+    } else {
+        video.pause();
+        playPauseBtn.textContent = 'Play';
+    }
+});
+
+progressBar.addEventListener('input', () => {
+    video.currentTime = (progressBar.value / 100) * video.duration;
+});
+
+function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+}
+
+const hamburger = document.querySelector('.hamburger');
+const navbar = document.querySelector('.navbar');
+
+// Toggle the active class for both the hamburger menu and the navbar
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active'); // For the hamburger animation
+  navbar.classList.toggle('show'); // Toggle visibility of the navbar
+});
+
+
+
+  </script>
+</body>
+</html>

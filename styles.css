@@ -1,0 +1,735 @@
+/* General Styling */
+body {
+  font-family: 'Garamond', 'Georgia', serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff;
+  background-color: #080808;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+  color: gold;
+}
+
+a {
+  text-decoration: none;
+  color: #f0e68c;
+}
+
+ul {
+  list-style: none;
+}
+/* Fix Section Overlap Issue */
+.services, .signature-cocktails, .contact {
+  padding-top: 80px; /* Adjust as necessary */
+}
+.signature-cocktails, .menu, .reservation, .gallery, .contact {
+margin-left: 200px; /* Adjust margin to match sidebar width */
+padding: 100px 20px;
+}
+
+/* Navbar - Vertical Sidebar */
+.navbar {
+  /* display: flex;  */
+  position: fixed; /* Ensure it's above content */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  /* background-color: rgba(0, 0, 0, 0.8); Overlay effect */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+/* Show navbar when .show class is toggled */
+.navbar.show {
+  display: flex;
+}
+.logo img {
+  width: 120px;
+  margin-bottom: 30px;
+}
+
+.nav-links {
+  margin-bottom: 800px;
+}
+
+.nav-links li {
+  margin-top: 20px;
+}
+
+.nav-links li a {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #f0e68c;
+}
+
+.nav-links li a:hover {
+  color: #d4af37;
+}
+
+
+/* Hero Section */
+.hero {
+  position: relative;
+  background-image: url('./images/top-view-delicious-cocktail-glass-goblet-served-with-lemon-slice-blue-background.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  margin-left: 200px; /* Adjusted for sidebar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.btn {
+  padding: 12px 30px;
+  background-color: #d4af37;
+  color: #080808;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #f0e68c;
+}
+/* Services Section - New Layout */
+.services {
+  padding: 100px 20px;
+  text-align: center;
+  background-color: #111;
+  margin-left: 200px;
+  /* position: relative; */
+}
+
+.services h2 {
+  font-size: 3rem;
+  margin-bottom: 60px;
+  color: #d4af37;
+}
+
+.service-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  position: relative;
+}
+
+.service-card {
+  position: relative;
+  background-color: #1a1a1a;
+  color: #f0e68c;
+  padding: 40px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  z-index: 1;
+  width: 85%;
+}
+
+.service-card:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: rgba(212, 175, 55, 0.15);
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+  z-index: -1;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+}
+
+.service-card:hover:before {
+  left: -10%;
+  top: -10%;
+}
+
+.service-left {
+  transform: translateX(-100px);
+}
+
+.service-right {
+  transform: translateX(100px);
+}
+
+.service-left, .service-right {
+  animation: slideIn 1s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-100px);
+  }
+}
+
+.service-right {
+  animation: slideInReverse 1s ease forwards;
+}
+
+@keyframes slideInReverse {
+  from {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(100px);
+  }
+}
+
+.service-card h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.service-card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+
+/* Menu Section */
+/* Signature Cocktails Section */
+.signature-cocktails {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 20px;
+  background-color: #111;
+  margin-left: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.signature-cocktails::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 150%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+  z-index: -1;
+}
+
+.cocktail-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.cocktail-image img {
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.cocktail-text {
+  max-width: 500px;
+  color: #f0e68c;
+}
+
+.cocktail-text h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #d4af37;
+}
+
+.cocktail-text p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.cocktail-text .btn {
+  padding: 10px 30px;
+  font-size: 1rem;
+  color: #111;
+  background-color: #d4af37;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.cocktail-text .btn:hover {
+  background-color: #f0e68c;
+}
+/* end */
+.menu {
+  padding: 50px;
+  /* background-color: #f9f9f9; */
+  text-align: center;
+}
+
+.cocktail-filter {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.filter-btn {
+  padding: 12px 24px;
+  background-color: #004242;
+  color: #fff;
+  border-radius: 25px;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: #006666;
+  transform: scale(1.05);
+}
+
+.cocktail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.cocktail-item {
+  perspective: 1000px;
+}
+
+.cocktail-card {
+  width: 100%;
+  height: 350px;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+  position: relative;
+  border-radius: 10px;
+}
+
+.cocktail-item:hover .cocktail-card {
+  transform: rotateY(180deg);
+}
+
+.cocktail-front,
+.cocktail-back {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: 60px;
+}
+
+.cocktail-front {
+  /* background-color: #fff; */
+}
+
+.cocktail-front img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.cocktail-back {
+  background-color: #004242;
+  color: #fff;
+  transform: rotateY(180deg);
+  padding: 20px;
+}
+
+.cocktail-name {
+  padding: 10px;
+}
+
+.cocktail-name h3 {
+  font-size: 1.4rem;
+}
+
+.cocktail-back h3 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.details,
+.ingredients {
+  font-size: 1rem;
+  text-align: center;
+}
+/* gallery */
+/* Section Styling */
+.gallery {
+padding: 50px;
+/* background-color: #f9f9f9; */
+text-align: center;
+}
+
+.gallery h2 {
+font-size: 2rem;
+margin-bottom: 30px;
+}
+
+.reservation h2{
+text-align: center;
+}
+/* Gallery Grid Layout */
+.gallery-container {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 20px;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+/* Individual Gallery Items */
+.gallery-item {
+position: relative;
+overflow: hidden;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+transform: scale(1.1); /* Zoom effect on hover */
+}
+
+/* Video Styling */
+.video-container {
+position: relative;
+background-color: #000;
+border-radius: 10px;
+}
+
+#tutorial-video {
+width: 100%;
+height: auto;
+display: block;
+border-radius: 10px 10px 0 0;
+}
+
+/* Custom Video Controls */
+.video-controls {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: #004242;
+padding: 10px;
+border-radius: 0 0 10px 10px;
+}
+
+.play-pause {
+background-color: #fff;
+color: #004242;
+padding: 8px 16px;
+border-radius: 5px;
+border: none;
+font-weight: bold;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.play-pause:hover {
+background-color: #006666;
+color: #fff;
+}
+
+#progress-bar {
+flex-grow: 1;
+margin: 0 10px;
+height: 5px;
+-webkit-appearance: none;
+background-color: #fff;
+border-radius: 5px;
+cursor: pointer;
+}
+
+#progress-bar::-webkit-slider-thumb {
+-webkit-appearance: none;
+width: 15px;
+height: 15px;
+border-radius: 50%;
+background: #006666;
+}
+
+#time-elapsed, #duration {
+color: #fff;
+font-size: 0.9rem;
+}
+
+/* Contact Section */
+.contact {
+  padding: 80px 20px;
+  background-color: #111;
+  text-align: center;
+  margin-left: 200px;
+}
+
+.contact h2 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form input, form textarea {
+  width: 60%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+}
+
+form button {
+  padding: 12px 30px;
+  background-color: #d4af37;
+  color: #080808;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #d4af37;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.close-popup {
+  background-color: transparent;
+  border: none;
+  color: #080808;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+/* Footer */
+footer {
+  padding: 20px;
+  background-color: #111;
+  text-align: center;
+  color: #f0e68c;
+  font-size: 0.9rem;
+  /* margin-left: 200px; */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1024px) {
+  .navbar {
+    width: 150px;
+  }
+
+  .hero, .services, .signature-cocktails, .menu, .reservation, .gallery, .contact {
+    margin-left: 150px;
+    padding: 80px 20px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .cocktail-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cocktail-text {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    width: 100px;
+  }
+
+  .hero, .services, .signature-cocktails, .menu, .reservation, .gallery, .contact {
+    margin-left: 100px;
+    padding: 60px 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .cocktail-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .cocktail-text h2 {
+    font-size: 2rem;
+  }
+  .cocktail-filter {
+    flex-direction: column;
+  }
+
+  .cocktail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cocktail-card {
+    height: 300px;
+  }
+
+  .service-card {
+    width: 50%;
+    margin-left: 85px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    display: none;
+  }
+
+  .hero, .services, .signature-cocktails, .menu, .reservation, .gallery, .contact {
+    margin-left: 0;
+    padding: 40px 10px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .cocktail-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .service-card {
+    padding: 20px;
+  }
+
+  .reservation-form input, .reservation-form textarea {
+    font-size: 0.9rem;
+  }
+}
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger div {
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Show the sidebar when hamburger is clicked */
+.navbar.active {
+  transform: translateX(0);
+}
+
+/* Rotate the hamburger to X shape when active */
+.hamburger.active div:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active div:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Mobile view - Collapse sidebar */
+@media (max-width: 768px) {
+  .navbar {
+    transform: translateX(-100%);
+    width: 250px;
+    position: fixed;
+    z-index: 1000;
+      background-color: rgba(0, 0, 0, 0.8); /*Overlay effect */
+
+  }
+
+  .navbar {
+    transform: translateX(0);
+  }
+
+  /* Show hamburger menu */
+  .hamburger {
+    display: block;
+  }
+
+  /* Adjust sections for mobile */
+  .hero, .services, .signature-cocktails, .menu, .reservation, .gallery, .contact {
+    margin-left: 0;
+    padding: 60px 20px;
+  }
+}
